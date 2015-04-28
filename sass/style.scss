@@ -1,0 +1,268 @@
+/*
+ Theme Name:   nrp2015
+ Theme URI:    http://www.nikirossphotography.com/
+ Description:  twentyfifteen child theme for Niki Ross Photography.
+ Author:       Sean Orozco
+ Author URI:   http://seanoroz.co
+ Template:     twentyfifteen
+ Version:      0.1.0
+ Tags:         
+ Text Domain:  nrp2015
+*/
+
+$mobile-large: 38.75em; // 620px
+$tablet-small: 46.25em; // 740px
+$tablet-large: 55em; // 880px
+$desktop-small: 59.6875em; // 955px
+$desktop-medium: 68.75em; // 1100px
+$desktop-large: 77.5em; // 1240px
+$dekstop-xlarge: 87.6875em; // 1403px
+
+@import "bourbon/bourbon";
+@import "base/grid-settings";
+@import "neat/neat";
+@import "base/base";
+@import "twentyfifteen-theme-nrp";
+
+
+
+/* HOME PAGE
+******************************************************/
+body.home { 
+  
+  .hentry {
+    padding-top: 0;
+  }
+
+  .entry-content {
+      padding: 0;
+  }
+
+  .gallery-item {
+    padding-bottom: 0;
+
+    &:last-child {
+      padding-bottom: 1.79104477%;
+    }
+  }
+}
+
+
+/* HEADER
+******************************************************/
+.site-title a {
+  @include hide-text;
+  display: block;
+  height: 60px;
+  background: transparent url('img/logo.svg') no-repeat top left;
+  background-size: contain;
+  @media screen and (min-width: $tablet-small) {
+    height: 80px;
+  }
+  @media screen and (min-width: $desktop-small) {
+    background-position: top center;
+  }
+  @media screen and (min-width: $desktop-medium) {
+    height: 90px;  
+  }
+  @media screen and (min-width: $desktop-large) {
+    height: 105px;
+  }
+}
+
+/* Sidebar Background Color */
+body:before,
+.site-header {
+  background: brown url('img/sidebar-bg.jpg') repeat top left; 
+}
+.site-header {
+  @media screen and (min-width: $desktop-small) { 
+    background: transparent;
+  }
+}
+
+
+
+.site-info {
+  @include outer-container;
+  
+  div {
+    @include span-columns(6);
+  }
+}
+
+
+
+// Uncomment this for a sticky footer.
+//
+// .wrapper-for-content-outside-of-footer {
+//   min-height: 100%;
+//   height: auto !important;
+//   height: 100%;
+//   margin: 0 auto -4em;
+// }
+
+// html, body {
+//  height: 100%;
+// }
+
+// .wrapper-for-content-outside-of-footer:after {
+//   content: "";
+//   display: block;
+// }
+
+// .footer-2, .wrapper-for-content-outside-of-footer:after {
+//   height: 17em;
+
+//   @include media($large-screen) {
+//     height: 4em;
+//   }
+// }
+
+.footer-2 {
+  $footer-background: desaturate(darken($base-accent-color, 20), 30);
+  $footer-color: white;
+  $footer-link-color: transparentize($footer-color, .6);
+  $footer-disclaimer-color: transparentize($footer-color, .6);
+
+  background: $footer-background;
+  padding: $base-spacing;
+  width: 100%;
+
+  .footer-logo {
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    @include media($large-screen) {
+      float: left;
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-logo img {
+    height: 1.6em;
+  } 
+
+  ul {
+    margin-bottom: 1em;
+    @include media($large-screen) {
+      float: left;
+      margin-left: 1em;
+      margin-bottom: 0;
+    }
+  }
+
+  ul li {
+    padding-right: 1em;
+    font-weight: 800;
+
+    @include media($large-screen) {
+      display: inline;
+      text-align: left;
+    }
+  }
+
+  ul li a {
+    color: $footer-link-color;
+
+    &:hover {
+      color: transparentize($footer-color, 0);
+    }
+  }
+
+  .footer-secondary-links {
+    @include media($large-screen) {
+      float: right;
+    }
+
+    li {
+      font-size: .8em;
+      font-weight: 400;
+    }
+
+    ul.footer-social {
+      margin-top: 1em;
+
+      @include media($large-screen) {
+        float: right;
+        margin-top: 0;
+      }
+
+      li {
+        float: left;
+        font-size: 1em;
+        padding-right: .7em;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      img {
+        opacity: .7;
+        height: 1.6em;
+        padding: 1px;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+
+/* BLOG NAVIGATION
+******************************************************/
+//.galleries button.dropdown-toggle:hover, .galleries button.dropdown-toggle:focus {
+//  display: none;
+//}
+
+//.galleries .main-navigation ul ul {
+//  display: block;
+//}
+
+
+
+
+/* TWENTYFIFTEEN OVERRIDES
+******************************************************/
+///* Box Background Color */
+//.post-navigation,
+//.pagination,
+////.secondary,
+//.site-footer,
+//.hentry,
+//.page-header,
+//.page-content,
+//.comments-area {
+//    background-color: $dark-brown;
+//}
+//.secondary {
+//  background-color: transparent;
+//}
+//
+///* Box Background Color */
+//button,
+//input[type="button"],
+//input[type="reset"],
+//input[type="submit"],
+//.pagination .prev,
+//.pagination .next,
+//.pagination .prev:before,
+//.pagination .next:before,
+//.widget_calendar tbody a,
+//.widget_calendar tbody a:hover,
+//.widget_calendar tbody a:focus,
+//.entry-content .page-links a,
+//.entry-content .page-links a:hover,
+//.entry-content .page-links a:focus,
+//.sticky-post {
+//    color: $dark-brown;
+//}
+//
+///* Meta Background Color */
+//.entry-footer {
+//    background-color: lighten($dark-brown, 1%);
+//}
